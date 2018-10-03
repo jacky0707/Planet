@@ -4,13 +4,16 @@
     <meta charset="utf-8" />
     <title>Planet</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/animation.css">
+    <script src="./js/lib.js"></script>
+    <script src="./js/main.js"></script>
 
 </head>
 
-<body>
+<body onload="initDreams()">
     <main>
         <div class="top-part">
-                <div class="absolute-part" id="button-part">
+                <div class="button-part" id="button-part">
                     <button class="dream-button house" id="house"></button>
                     <button class="dream-button car" id="car"></button>
                     <button class="dream-button wedding" id="wedding"></button>
@@ -21,14 +24,29 @@
                     <button class="dream-button company" id="company"></button>
                     <button class="dream-button others" id="others"></button>
                 </div>
-                <div class="absolute-part">
+                <div class="planet-part">
                     <div class="planet"></div>
                 </div>
         </div>
         
         <div class="text-part">
-            <div class="salary text-part-border"></div>
-            <div class="list text-part-border"></div>
+            <div class="salary text-part-content">
+                薪水設置 ( 年薪 )：
+                <br>
+                <input type="text" class="text-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                <br>
+                目前年紀：
+                <br>
+                <input type="text" class="text-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                <br>
+                預計退休年紀：
+                <br>
+                <input type="text" class="text-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+            </div>
+            <div class="list text-part-content">
+                <div class="list-items"></div>
+                <div>完成星球設定後，請找 dr.dream 喔！！</div>
+            </div>
         </div>
     </main>
 </body>

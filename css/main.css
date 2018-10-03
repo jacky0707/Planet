@@ -10,16 +10,27 @@ body{
     border-width: 0px;
     color:white;
 }
+button{
+    outline:none;
+}
 .top-part{
     width: 100vw;
 }
-.absolute-part{
+.button-part{
     margin-top: 50px;
     position: absolute;
     top: 0px;
     left: calc(50vw - 500px);
     width: 1000px;
     height: 650px;
+}
+.planet-part{
+    top: 200px;
+    margin-top: 50px;
+    position: absolute;
+    left: calc(50vw - 225px);
+    width: 450px;
+    height: 450px;
 }
 .dream-button{
     position: absolute;
@@ -41,65 +52,108 @@ body{
     background-image: url("../img/venus.png");
     background-size: 450px;
     background-repeat: no-repeat;
-    background-position: center 200px;
+    background-position: center;
 }
 #others{
-    left: calc(50% - 50px);
+    left: 400px;
+    width: 200px
 }
 #house{
-    left: 250px;
-    top: 45px;
+    left:0px;
+    top: 135px;
     background-image: url("../img/house.png")
 }
-#kid{
-    right: 250px;
-    top: 45px;
-    background-image: url("../img/baby.png")
-}
 #car{
-    left:110px;
-    top: 200px;
-}
-#parent{
-    right: 110px;
-    top: 200px;
+    left:0px;
+    top: 275px;
+    background-image: url("../img/car.png")
 }
 #wedding{
-    left: 60px;
-    top:380px;
+    left: 0px;
+    top:415px;
+    background-image: url("../img/wedding.png")
+}
+#kid{
+    left: 0px;
+    top: 550px;
+    background-image: url("../img/baby.png")
+}
+#parent{
+    right: 0px;
+    top: 135px;
 }
 #travel{
-    right: 60px;
-    top: 380px;
+    right: 0px;
+    top: 275px;
+    background-image: url("../img/plane.png")
 }
 #retire{
-    left: 100px;
-    top: 570px;
+    right: 0px;
+    top: 415px;
+    background-image: url("../img/retire.png")
 }
 #company{
-    right: 100px;
-    top: 570px;
+    right: 0px;
+    top: 550px;
+    background-image: url("../img/company.png")
 }
+
 .text-part{
-    width: 100vw;
+    width: 90vw;
     height: 500px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: absolute;
     top: 800px;
-    left: 0px;
+    left: 5vw;
+    margin-bottom:100px ;
 }
-.text-part-border{
+.text-part-content{
     border-radius: 50px;
+    background-color: rgb(255,255,255,0.2);
+    padding:20px;
+    font-size: 24px;
+    line-height: 50px;
+    color: white;
+}
+.text-input{
+	border: 1px solid #CCC;
+	-webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	-moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+    color: black;
+	font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+	height: 8px;
+	padding: 10px;
+    width: 80%;
+    text-align: center;
 }
 .salary{
     width: 30%;
-    height: 100%;
+    height: 70%;
     box-shadow: 0px 0px 5px 5px gold;
 }
 .list{
-    width: 50%;
+    width: 55%;
     height: 100%;
     box-shadow: 0px 0px 5px 5px #B87333;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.list-items{
+    width: 95%;
+    height: 80%;
+    overflow: scroll;
+}
+.adding-dream{
+    width: 100px;
+    height: 100px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
 }
