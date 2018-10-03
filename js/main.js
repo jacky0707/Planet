@@ -9,7 +9,6 @@ function flyInToPlanet(event){
     flyingDream.setAttribute("style","position:absolute;left:"+buttonX+"px;top:"+buttonY+"px;background:"+getComputedStyle(event.target).backgroundImage+"no-repeat scroll 50% 50% / contain padding-box border-box")
     document.body.appendChild(flyingDream)
 
-    
     //飛行終點
     setTimeout(function(){
         flyingDream.style.transform="scale(2)"
@@ -28,10 +27,38 @@ function initDreams(){
     for(dream=0;dream<numberOfDreams-1;dream++){
         let dreamElement = document.getElementById('button-part').children[dream]
         let handler = function(event){
+            switch(event.target.id){
+                case "house":
+                if(document.getElementsByClassName('planet-house').length==5){
+                    drDreamTalk("full")
+                    event.target.disabled = true
+                }else{
+                    flyInToPlanet(event)
+                    dreamShowUp("house")
+                }
+                
+
+                break;
+            }
             
-            flyInToPlanet(event)
             
         }
         dreamElement.addEventListener("mousedown",handler)
     } 
+}
+function dreamShowUp(dream){
+    let amount = document.getElementsByClassName(dream+"-planet").length
+    let newDream = createElement("DIV",{atrs:{
+        id:dream+amount,
+        className:dream+"-planet "+"planet-things"
+    }},document.getElementsByTagName("main")[0])
+    setTimeout(function(){
+        newDream.style.display="block"
+    },2200)
+}
+function drDreamTalk(type){
+
+}
+function addtoList(dream){
+
 }
