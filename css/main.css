@@ -76,13 +76,13 @@ button{
 #kid{
     left: 0px;
     top: 550px;
-    background-image: url("../img/baby.png")
+    background-image: url("../img/kid.png")
 }
 #parent{
     right: 0px;
     top: 135px;
 }
-#travel{
+#plane{
     right: 0px;
     top: 275px;
     background-image: url("../img/plane.png")
@@ -157,18 +157,102 @@ button{
     transition: all 1s;
     -webkit-transition: all 1s;
 }
+@keyframes carDriving{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-1turn);
+    }
+}
+@keyframes planeDrive{
+    to{
+        transform: rotate(1turn);
+    }
+}
 .planet-things{
     display: none;
     width: 450px;
     height: 450px;
     position: absolute;
-    z-index: 200;
 }
 .house-planet{
+    width: 510px;
+    height: 510px;
     background: url("../img/house.png");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 100px 70px;
-    left: calc(50vw - 225px);
+    background-size: 70px 50px;
+    left: calc(50vw - 255px);
     top:220px;
+    z-index: 200;
+
+}
+.company-planet{
+    width: 510px;
+    height: 510px;
+    background: url("../img/company.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 70px 50px;
+    left: calc(50vw - 255px);
+    top:220px;
+    z-index: 200;
+}
+.car-planet{
+    width: 480px;
+    height: 480px;
+    background: url("../img/car.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 45px 20px;
+    left: calc(50vw - 240px);
+    top:235px;
+    z-index: 150;
+    animation: carDriving 15s linear infinite;
+}
+.wedding-planet{
+    width: 570px;
+    height: 570px;
+    background: url("../img/wedding.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100px 80px;
+    left: calc(50vw - 285px);
+    top:190px;
+    z-index: 200;
+}
+.kid-planet{
+    width: 400px;
+    height: 400px;
+    background: url("../img/kid.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 40px 40px;
+    left: calc(50vw - 200px);
+    top:275px;
+    z-index: 200;
+}
+.plane-planet{
+    width: 600px;
+    height: 600px;
+    background: url("../img/plane.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 80px 45px;
+    left: calc(50vw - 300px);
+    top:175px;
+    z-index: 100;
+    animation: planeDrive 10s linear infinite;
+}
+.retire-planet{
+    width: 290px;
+    height: 290px;
+    background: url("../img/retire.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 80px 80px;
+    left: calc(50vw - 145px);
+    top:330px;
+    z-index: 100;
 }
