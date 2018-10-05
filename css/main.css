@@ -254,13 +254,14 @@ button{
     z-index: 100;
 }
 .plane-planet{
-    width: 650px;
-    height: 650px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
     background: url("../img/plane.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 60px 30px;
-    left: calc(50vw - 325px);
+    left: calc(50vw - 300px);
     top:0px;
     z-index: 100;
     animation: planeDrive 10s linear infinite;
@@ -377,18 +378,89 @@ button{
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 200px;
-    width: 35%;
-    padding:0px 10px;
+    height: 205px;
+    width: calc(35% - 20px);
+    padding:15px 20px;
     border-radius: 50px;
+    font-size: 20px;
+    line-height: 28px;
     box-shadow: 0px 0px 5px 5px plum;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .salary-part{
     position: absolute;
-    bottom: 0px;
+    bottom: -20px;
     left: 0px;
     text-align: center;
     width: 35%;
     height: 55%;
     box-shadow: 0px 0px 5px 5px gold;
+}
+.jacky{
+    position: absolute;
+    width: 40px;
+    height: 60px;;
+    background:url("../img/suit.png");
+    background-size: 40px 60px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    border:none;
+    bottom: 0px;
+    animation: walking linear 10s infinite;
+}
+.doctor-jacky-part:hover .jacky{
+    animation-play-state: paused;
+}
+.doctor-jacky-part:hover .jacky-button{
+    display: block;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+}
+.jacky-button{
+    display:none;
+}
+.fb-fans-button{
+    animation: popout linear 0.5s;
+    background: url("../img/fans.png");
+    background-size: 85px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.email-button{
+    animation: popout linear 0.5s;
+    background: url("../img/email.png");
+    background-size: 85px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.pressure-button{
+    animation: popout linear 0.5s;
+    background: url("../img/pressure.png");
+    background-size: 85px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@keyframes popout{
+    0%{
+        width: 0px;
+        height: 0px;
+    }
+    100%{
+        width: 85px;
+        height: 85px;
+    }
+}
+@keyframes walking{
+    0%{
+        left:50px;
+    }
+    50%{
+        left:230px;
+    }
+    100%{
+        left: 50px;
+    }
 }

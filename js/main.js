@@ -38,6 +38,8 @@ function initDreams(){
                         let chosenPlace = housePlace.pop()
                         dreamShowUp("house").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("house")
+                        let house = document.getElementsByName("house")[0].value
+                        document.getElementsByName("house")[0].value = (parseInt(house) + 10000000) 
                     }
                     break;
                 case "car":
@@ -48,6 +50,8 @@ function initDreams(){
                         flyInToPlanet(event)
                         dreamShowUp("car")
                         addtoList("car")
+                        let car = document.getElementsByName("car")[0].value
+                        document.getElementsByName("car")[0].value = (parseInt(car) + 500000)
                     }
                     break;
                 case "wedding":
@@ -59,6 +63,8 @@ function initDreams(){
                         let chosenPlace = weddingPlace.pop()
                         dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("wedding")
+                        let wedding = document.getElementsByName("wedding")[0].value
+                        document.getElementsByName("wedding")[0].value = (parseInt(wedding) + 500000)
                     }
                     break;
                 case "kid":
@@ -70,6 +76,8 @@ function initDreams(){
                         let chosenPlace = kidPlace.pop()
                         dreamShowUp("kid").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("kid")
+                        let kid = document.getElementsByName("kid")[0].value
+                        document.getElementsByName("kid")[0].value = (parseInt(kid) + 2500000)
                     }
                     break;
                 case "parent":
@@ -81,6 +89,8 @@ function initDreams(){
                         let chosenPlace = parentPlace.pop()
                         dreamShowUp("parent").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("parent")
+                        let parent = document.getElementsByName("parent")[0].value
+                        document.getElementsByName("parent")[0].value = (parseInt(parent) + 240000)
                     }
                     break;
                 case "plane":
@@ -91,6 +101,8 @@ function initDreams(){
                         flyInToPlanet(event)
                         dreamShowUp("plane")
                         addtoList("plane")
+                        let plane = document.getElementsByName("plane")[0].value
+                        document.getElementsByName("plane")[0].value = (parseInt(plane) + 600000)
                     }
                     break;
                 case "retire":
@@ -102,6 +114,8 @@ function initDreams(){
                         let chosenPlace = retirePlace.pop()
                         dreamShowUp("retire").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("retire")
+                        let retire = document.getElementsByName("retire")[0].value
+                        document.getElementsByName("retire")[0].value = (parseInt(retire) + 3600000)
                     }
                     break;
                 case "company":
@@ -113,6 +127,8 @@ function initDreams(){
                         let chosenPlace = companyPlace.pop()
                         dreamShowUp("company").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("company")
+                        let company = document.getElementsByName("company")[0].value
+                        document.getElementsByName("company")[0].value = (parseInt(company) + 1000000)
                     }
                     break;
             }
@@ -151,4 +167,19 @@ function addtoList(dream){
         document.getElementById(dreamId).remove()
     }
     dreamBall.addEventListener('click',handler)*/
+}
+
+function pressurePage(){
+    let salary = document.getElementsByName("salary")[0].value
+    let age = document.getElementsByName("age")[0].value
+    let retireAge = document.getElementsByName("retire-age")[0].value
+    let house = document.getElementsByName("house")[0].value
+    let car = document.getElementsByName("car")[0].value
+    let wedding = document.getElementsByName("wedding")[0].value
+    let kid = document.getElementsByName("kid")[0].value
+    let parent = document.getElementsByName("parent")[0].value
+    let plane = document.getElementsByName("plane")[0].value
+    let retire = document.getElementsByName("retire")[0].value
+    let company = document.getElementsByName("company")[0].value
+
 }
