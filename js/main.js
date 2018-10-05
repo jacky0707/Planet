@@ -13,7 +13,8 @@ function flyInToPlanet(event){
     setTimeout(function(){
         flyingDream.style.transform="scale(2)"
         flyingDream.style.left = "calc(50vw - 50px)"
-        flyingDream.style.top = "425px"
+        flyingDream.style.top = "265px"
+        flyingDream.style.zIndex = 500
     },1)
     
     
@@ -24,7 +25,7 @@ function flyInToPlanet(event){
 }
 function initDreams(){
     let numberOfDreams = document.getElementById('button-part').children.length
-    for(dream=0;dream<numberOfDreams-1;dream++){
+    for(dream=0;dream<numberOfDreams;dream++){
         let dreamElement = document.getElementById('button-part').children[dream]
         let handler = function(event){
             switch(event.target.id){
@@ -36,15 +37,17 @@ function initDreams(){
                         flyInToPlanet(event)
                         let chosenPlace = housePlace.pop()
                         dreamShowUp("house").style.transform = "rotate("+chosenPlace+"deg)"
+                        addtoList("house")
                     }
                     break;
                 case "car":
-                    if(document.getElementsByClassName('car-planet').length==10){
+                    if(document.getElementsByClassName('car-planet').length==8){
                         drDreamTalk("full")
                         event.target.disabled = true
                     }else{
                         flyInToPlanet(event)
                         dreamShowUp("car")
+                        addtoList("car")
                     }
                     break;
                 case "wedding":
@@ -55,16 +58,29 @@ function initDreams(){
                         flyInToPlanet(event)
                         let chosenPlace = weddingPlace.pop()
                         dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
+                        addtoList("wedding")
                     }
                     break;
                 case "kid":
-                    if(document.getElementsByClassName('kid-planet').length==18){
+                    if(document.getElementsByClassName('kid-planet').length==10){
                         drDreamTalk("full")
                         event.target.disabled = true
                     }else{
                         flyInToPlanet(event)
                         let chosenPlace = kidPlace.pop()
                         dreamShowUp("kid").style.transform = "rotate("+chosenPlace+"deg)"
+                        addtoList("kid")
+                    }
+                    break;
+                case "parent":
+                    if(document.getElementsByClassName('parent-planet').length==1){
+                        drDreamTalk("full")
+                        event.target.disabled = true
+                    }else{
+                        flyInToPlanet(event)
+                        let chosenPlace = parentPlace.pop()
+                        dreamShowUp("parent").style.transform = "rotate("+chosenPlace+"deg)"
+                        addtoList("parent")
                     }
                     break;
                 case "plane":
@@ -74,6 +90,7 @@ function initDreams(){
                     }else{
                         flyInToPlanet(event)
                         dreamShowUp("plane")
+                        addtoList("plane")
                     }
                     break;
                 case "retire":
@@ -84,6 +101,7 @@ function initDreams(){
                         flyInToPlanet(event)
                         let chosenPlace = retirePlace.pop()
                         dreamShowUp("retire").style.transform = "rotate("+chosenPlace+"deg)"
+                        addtoList("retire")
                     }
                     break;
                 case "company":
@@ -94,11 +112,10 @@ function initDreams(){
                         flyInToPlanet(event)
                         let chosenPlace = companyPlace.pop()
                         dreamShowUp("company").style.transform = "rotate("+chosenPlace+"deg)"
+                        addtoList("company")
                     }
                     break;
             }
-            
-            
         }
         dreamElement.addEventListener("mousedown",handler)
     } 
@@ -118,5 +135,20 @@ function drDreamTalk(type){
 
 }
 function addtoList(dream){
-
+    let amount = document.getElementsByClassName(dream+'-ball').length
+    let dreamBall = createElement("DIV",{atrs:{
+        id:'list'+dream+amount,
+        className:"dream-ball "+dream+"-ball",
+    }},document.getElementsByClassName("list-"+dream+"-balls")[0])
+ 
+    setTimeout(function(){dreamBall.style.right="calc(0px + "+(amount*32)+"px)"},10)
+    
+    /*remove 之後做
+    let handler = function(event){
+        dreamBall.remove()
+        let dreamId = dreamBall.id.split('list')[1]
+        console.log(dreamId)
+        document.getElementById(dreamId).remove()
+    }
+    dreamBall.addEventListener('click',handler)*/
 }

@@ -17,16 +17,14 @@ button{
     width: 100vw;
 }
 .button-part{
-    margin-top: 50px;
     position: absolute;
     top: 0px;
     left: calc(50vw - 500px);
     width: 1000px;
-    height: 650px;
+    height: 550px;
 }
 .planet-part{
-    top: 200px;
-    margin-top: 50px;
+    top: 80px;
     position: absolute;
     left: calc(50vw - 225px);
     width: 450px;
@@ -54,65 +52,62 @@ button{
     background-repeat: no-repeat;
     background-position: center;
 }
-#others{
-    left: 400px;
-    width: 200px
-}
 #house{
     left:0px;
-    top: 135px;
+    top: 35px;
     background-image: url("../img/house.png")
 }
 #car{
     left:0px;
-    top: 275px;
+    top: 175px;
     background-image: url("../img/car.png")
 }
 #wedding{
     left: 0px;
-    top:415px;
+    top:315px;
     background-image: url("../img/wedding.png")
 }
 #kid{
     left: 0px;
-    top: 550px;
+    top: 450px;
     background-image: url("../img/kid.png")
 }
 #parent{
     right: 0px;
-    top: 135px;
+    top: 35px;
+    background-image: url("../img/parent.png")
 }
 #plane{
     right: 0px;
-    top: 275px;
+    top: 175px;
     background-image: url("../img/plane.png")
 }
 #retire{
     right: 0px;
-    top: 415px;
+    top: 315px;
     background-image: url("../img/retire.png")
 }
 #company{
     right: 0px;
-    top: 550px;
+    top: 450px;
     background-image: url("../img/company.png")
 }
 
 .text-part{
-    width: 90vw;
-    height: 500px;
+    width: 1000px;
+    height: 600px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: absolute;
-    top: 800px;
-    left: 5vw;
+    top: 650px;
     margin-bottom:100px ;
+    left: calc(50vw - 500px);
 }
 .text-part-content{
     border-radius: 50px;
     background-color: rgb(255,255,255,0.2);
-    padding:20px;
+    padding:20px 10px 0px 10px;
     font-size: 24px;
     line-height: 50px;
     color: white;
@@ -133,9 +128,7 @@ button{
     text-align: center;
 }
 .salary{
-    width: 30%;
-    height: 70%;
-    box-shadow: 0px 0px 5px 5px gold;
+    overflow: hidden;
 }
 .list{
     width: 55%;
@@ -147,9 +140,26 @@ button{
     justify-content: space-around;
 }
 .list-items{
-    width: 95%;
+    width: 100%;
     height: 85%;
-    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.list-item{
+    width: 95%;
+    margin:0px 1%;
+    height: 32px;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.list-title{
+    width: 13%;
+    border-right: solid 1.5px rgb(53, 243, 211);
 }
 .adding-dream{
     width: 100px;
@@ -184,9 +194,8 @@ button{
     background-position: center top;
     background-size: 70px 50px;
     left: calc(50vw - 255px);
-    top:220px;
+    top:50px;
     z-index: 200;
-
 }
 .company-planet{
     width: 510px;
@@ -196,7 +205,7 @@ button{
     background-position: center top;
     background-size: 70px 50px;
     left: calc(50vw - 255px);
-    top:220px;
+    top:50px;
     z-index: 200;
 }
 .car-planet{
@@ -207,19 +216,19 @@ button{
     background-position: center top;
     background-size: 45px 20px;
     left: calc(50vw - 240px);
-    top:235px;
+    top:65px;
     z-index: 150;
     animation: carDriving 15s linear infinite;
 }
 .wedding-planet{
-    width: 570px;
-    height: 570px;
+    width: 290px;
+    height: 290px;
     background: url("../img/wedding.png");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 100px 80px;
-    left: calc(50vw - 285px);
-    top:190px;
+    background-size: 80px 80px;
+    left: calc(50vw - 145px);
+    top:160px;
     z-index: 200;
 }
 .kid-planet{
@@ -230,18 +239,29 @@ button{
     background-position: center top;
     background-size: 40px 40px;
     left: calc(50vw - 200px);
-    top:275px;
+    top:105px;
     z-index: 200;
 }
+.parent-planet{
+    width: 290px;
+    height: 290px;
+    background: url("../img/parent.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 50px 80px;
+    left: calc(50vw - 145px);
+    top:160px;
+    z-index: 100;
+}
 .plane-planet{
-    width: 600px;
-    height: 600px;
+    width: 650px;
+    height: 650px;
     background: url("../img/plane.png");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 80px 45px;
-    left: calc(50vw - 300px);
-    top:175px;
+    background-size: 60px 30px;
+    left: calc(50vw - 325px);
+    top:0px;
     z-index: 100;
     animation: planeDrive 10s linear infinite;
 }
@@ -253,6 +273,122 @@ button{
     background-position: center top;
     background-size: 80px 80px;
     left: calc(50vw - 145px);
-    top:330px;
+    top:160px;
     z-index: 100;
+}
+.dream-ball{
+    border-radius: 50%;
+    border:1px solid white;
+    width: 30px;
+    height: 30px;
+    right: 110%;
+    transition: all 2s linear;
+    -webkit-transition: all 2s linear;
+    animation: dreamBallSpin 2s linear;
+    position: absolute;
+}
+@keyframes dreamBallSpin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(1080deg);
+    }
+}
+.list-balls{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+}
+.house-ball{
+    background: url("../img/house.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.car-ball{
+    background: url("../img/car.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.wedding-ball{
+    background: url("../img/wedding.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.kid-ball{
+    background: url("../img/kid.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.parent-ball{
+    background: url("../img/parent.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.plane-ball{
+    background: url("../img/plane.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.retire-ball{
+    background: url("../img/retire.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.company-ball{
+    background: url("../img/company.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.total-title{
+    width: 100%;
+    text-align: end;
+    border-bottom: solid 1px black;
+    border-right: none;
+}
+.dream-total{
+    width:17%;
+    border-radius: 3px;
+    text-align: center;
+    border: 1px solid #CCC;
+	-webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	-moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+    color: black;
+	font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+	height: 8px;
+    padding: 10px;
+    margin-left: 15px;
+}
+.doctor-jacky-part{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 200px;
+    width: 35%;
+    padding:0px 10px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 5px 5px plum;
+}
+.salary-part{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    width: 35%;
+    height: 55%;
+    box-shadow: 0px 0px 5px 5px gold;
 }
