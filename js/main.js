@@ -64,7 +64,7 @@ function initDreams(){
                         dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("wedding")
                         let wedding = document.getElementsByName("wedding")[0].value
-                        document.getElementsByName("wedding")[0].value = (parseInt(wedding) + 500000)
+                        document.getElementsByName("wedding")[0].value = (parseInt(wedding) + 400000)
                     }
                     break;
                 case "kid":
@@ -77,7 +77,7 @@ function initDreams(){
                         dreamShowUp("kid").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("kid")
                         let kid = document.getElementsByName("kid")[0].value
-                        document.getElementsByName("kid")[0].value = (parseInt(kid) + 2500000)
+                        document.getElementsByName("kid")[0].value = (parseInt(kid) + 4000000)
                     }
                     break;
                 case "parent":
@@ -85,6 +85,7 @@ function initDreams(){
                         drDreamTalk("full")
                         event.target.disabled = true
                     }else{
+                        console.log("parent")
                         flyInToPlanet(event)
                         let chosenPlace = parentPlace.pop()
                         dreamShowUp("parent").style.transform = "rotate("+chosenPlace+"deg)"
@@ -173,6 +174,7 @@ function pressurePage(){
     let salary = document.getElementsByName("salary")[0].value
     let age = document.getElementsByName("age")[0].value
     let retireAge = document.getElementsByName("retire-age")[0].value
+    let dieAge = document.getElementsByName("die-age")[0].value
     let house = document.getElementsByName("house")[0].value
     let car = document.getElementsByName("car")[0].value
     let wedding = document.getElementsByName("wedding")[0].value
@@ -181,5 +183,95 @@ function pressurePage(){
     let plane = document.getElementsByName("plane")[0].value
     let retire = document.getElementsByName("retire")[0].value
     let company = document.getElementsByName("company")[0].value
+    
+    document.getElementsByClassName('salary-part')[0].style.display="none"
+    document.getElementById("button-part").style.display="none"
+    document.getElementsByClassName("planet-part")[0].style.display="none"
 
+    let jackyPart = document.getElementsByClassName("doctor-jacky-part")[0]
+    jackyPart.style.left="710px"
+    jackyPart.style.height = "500px"
+    jackyPart.style.width = "250px"
+    jackyPart.style.top = "-330px"
+    document.getElementsByClassName("jacky-button")[2].remove()
+    document.getElementsByClassName("jacky-button")[1].remove()
+    document.getElementsByClassName("jacky-button")[0].remove()
+
+    var labels= ['過了的人生','有收入的人生','沒收入的人生'];
+    document.getElementsByClassName('pie-part')[0].style.display = "block"
+    let piePart = document.getElementById('pie').getContext('2d')
+    let pieChart = new Chart(piePart,{
+        type: 'pie',
+            data : {
+                labels:labels,
+                datasets: [{
+                    data:[age,retireAge - age,dieAge - retireAge],
+                    backgroundColor: [
+                        "rgb(119,136,153,0.5)",
+                        "rgb(255,215,0,0.5)",
+                        "rgb(127,255,212,0.5)"
+                    ],
+                    borderColor:"transparent",
+                }],
+            },
+            options: {
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        fontColor: 'white'
+                    }
+                }
+            }
+    })
+
+    let listPart = document.getElementsByClassName("list")[0]
+    listPart.style.width = "270px"
+    listPart.style.top = "250px"
+    listPart.style.height = "350px"
+
+    for(listTitle = document.getElementsByClassName("list-title").length-1;listTitle>=0;listTitle--){
+        document.getElementsByClassName("list-title")[listTitle].remove()
+    }
+    for(dreamTotal = document.getElementsByClassName("dream-total").length-1;dreamTotal>=0;dreamTotal--){
+        document.getElementsByClassName("dream-total")[dreamTotal].remove()
+    }
+    document.getElementById("notice").remove()
+
+    let agePart = createElement("DIV",{atrs:{
+        className:"age-part"
+    }},document.getElementsByTagName("main")[0])
+    agePart.style.display = "block"
+    for(balls = document.getElementsByClassName("list-balls").length-1;balls>=0;balls--){
+        document.getElementsByClassName("list-balls")[balls].classList.add("new-list-balls")
+    }
+
+    let nthBall = 0
+    for(let lifeExpectancy = dieAge - age;lifeExpectancy>0;lifeExpectancy = lifeExpectancy-10){
+        setTimeout(function(){
+            let ageBall = createElement("DIV",{atrs:{
+                className:"age-ball",
+                left:"0px",
+                top:"0px",
+                id:lifeExpectancy,
+                innerHTML:parseInt(lifeExpectancy) + parseInt(age)
+            }},agePart)
+
+            let ballOrder = 1
+            for(ballOrder;ballOrder<=agePart.children.length;ballOrder++){
+                if(ballOrder%2==1){
+                    agePart.children[agePart.children.length - ballOrder].style.left = "0px"
+                    agePart.children[agePart.children.length - ballOrder].style.top = ballOrder*150+"px"
+                    agePart.children[agePart.children.length - ballOrder].style.transform = "rotate(-360deg)"                 
+                }else{
+                    agePart.children[agePart.children.length - ballOrder].style.left = "140px"
+                    agePart.children[agePart.children.length - ballOrder].style.top = ballOrder*150+"px"
+                    agePart.children[agePart.children.length - ballOrder].style.transform = "rotate(360deg)"                 
+                }
+                console.log(ballOrder)
+            }
+            
+        },700*(nthBall))
+        nthBall++
+    }
 }
+

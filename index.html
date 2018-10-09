@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./css/animation.css">
     <script src="./js/lib.js"></script>
     <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <script>
         let housePlace = [90,135,225,315,0]
         let companyPlace =[45,180,270]
@@ -35,7 +36,9 @@
                     <div class="planet"></div>
                 </div>
         </div>
-        
+        <div class="pie-part">
+            <canvas id="pie"></canvas>
+        </div>
         <div class="text-part">
             <div class="salary">
                 <div class="doctor-jacky-part text-part-content">
@@ -50,24 +53,30 @@
                     <div class="jacky"></div>                    
                 </div>
                 <div class="salary-part text-part-content">
-                    薪水設置 ( 年薪 )：
+                    目前薪水 ( 年薪 )：
                     <br>
-                    <input type="text" name="salary" class="text-input" value="50000" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                    <input type="text" name="salary" class="text-input" value="650000" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
                     <br>
                     目前年紀：
                     <br>
                     <input type="text" name="age" class="text-input" value="25" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
                     <br>
+                    當前資產:
+                    <br>
+                    <input type="text" name="age" class="text-input" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                    <br>
                     預計退休年紀：
                     <br>
                     <input type="text" name="retire-age" class="text-input" value="65" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                    <br>
+                    人生畢業典禮年紀：
+                    <br>
+                    <input type="text" name="die-age" class="text-input" value="90" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
                 </div>
             </div>
             <div class="list text-part-content">
                 <div class="list-items">
-                    <div class="list-item">
                         <div class="list-title total-title">總值</div>
-                    </div>
                     <div class="list-item">
                         <div class="list-house-title list-title">房子</div>
                         <div class="list-house-balls list-balls"></div>
@@ -109,7 +118,7 @@
                         <input type="text" name="company" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
                     </div>
                 </div>
-                <div>完成星球設定後，請找 dr.dream 喔！！</div>
+                <div id="notice">完成星球設定後，請找 dr.dream 喔！！</div>
             </div>
         </div>
         

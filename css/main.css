@@ -29,6 +29,7 @@ button{
     left: calc(50vw - 225px);
     width: 450px;
     height: 450px;
+    transition: all 1s;
 }
 .dream-button{
     position: absolute;
@@ -51,6 +52,7 @@ button{
     background-size: 450px;
     background-repeat: no-repeat;
     background-position: center;
+    transition: all 1s;
 }
 #house{
     left:0px;
@@ -121,16 +123,14 @@ button{
 	-moz-border-radius: 3px;
 	border-radius: 3px;
     color: black;
-	font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+	font: 20px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
 	height: 8px;
 	padding: 10px;
-    width: 80%;
+    width: 50%;
     text-align: center;
 }
-.salary{
-    overflow: hidden;
-}
 .list{
+    position: absolute;
     width: 55%;
     height: 100%;
     box-shadow: 0px 0px 5px 5px #B87333;
@@ -138,6 +138,9 @@ button{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    transition: all 1s;
+    top: 0px;
+    right: 0px;
 }
 .list-items{
     width: 100%;
@@ -303,6 +306,11 @@ button{
     position: relative;
     overflow: hidden;
 }
+.new-list-balls{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
 .house-ball{
     background: url("../img/house.png");
     background-size: contain;
@@ -388,6 +396,7 @@ button{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    transition: all 1s; 
 }
 .salary-part{
     position: absolute;
@@ -397,6 +406,10 @@ button{
     width: 35%;
     height: 55%;
     box-shadow: 0px 0px 5px 5px gold;
+    font-size: 16px;
+    line-height: 32px;
+    padding: 0px;
+    transition: all 1s;
 }
 .jacky{
     position: absolute;
@@ -458,9 +471,34 @@ button{
         left:50px;
     }
     50%{
-        left:230px;
+        left:200px;
     }
     100%{
         left: 50px;
     }
+}
+.pie-part{
+    display: none;
+    position: absolute;
+    left: calc(50% + 210px);
+    width: 290px;
+}
+.age-part{
+    display: none;
+    position: absolute;
+    left: calc(50% - 500px);
+    width: 190px;
+    top:-50px;
+}
+.age-ball{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all 0.7s linear;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+    font-size: 24px;
+	box-shadow: 0px 0px 5px 5px white;
 }
