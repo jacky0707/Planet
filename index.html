@@ -16,6 +16,8 @@
         let kidPlace = [36,72,108,144,180,216,252,288,324,360]
         let parentPlace = [262]
         let retirePlace = [142]
+
+        let robotPosition = 0
     </script>
 </head>
 
@@ -39,6 +41,9 @@
         <div class="pie-part">
             <canvas id="pie"></canvas>
         </div>
+        <div class="bar-part">
+                <canvas id="bar" width="440px" height="800px"></canvas>
+            </div>
         <div class="text-part">
             <div class="salary">
                 <div class="doctor-jacky-part text-part-content">
@@ -63,7 +68,7 @@
                     <br>
                     當前資產:
                     <br>
-                    <input type="text" name="age" class="text-input" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                    <input type="text" name="fortune" class="text-input" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
                     <br>
                     預計退休年紀：
                     <br>

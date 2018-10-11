@@ -64,7 +64,7 @@ function initDreams(){
                         dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("wedding")
                         let wedding = document.getElementsByName("wedding")[0].value
-                        document.getElementsByName("wedding")[0].value = (parseInt(wedding) + 400000)
+                        document.getElementsByName("wedding")[0].value = (parseInt(wedding) + 500000)
                     }
                     break;
                 case "kid":
@@ -148,9 +148,7 @@ function dreamShowUp(dream){
     },2100)
     return newDream
 }
-function drDreamTalk(type){
 
-}
 function addtoList(dream){
     let amount = document.getElementsByClassName(dream+'-ball').length
     let dreamBall = createElement("DIV",{atrs:{
@@ -171,19 +169,21 @@ function addtoList(dream){
 }
 
 function pressurePage(){
-    let salary = document.getElementsByName("salary")[0].value
-    let age = document.getElementsByName("age")[0].value
-    let retireAge = document.getElementsByName("retire-age")[0].value
-    let dieAge = document.getElementsByName("die-age")[0].value
-    let house = document.getElementsByName("house")[0].value
-    let car = document.getElementsByName("car")[0].value
-    let wedding = document.getElementsByName("wedding")[0].value
-    let kid = document.getElementsByName("kid")[0].value
-    let parent = document.getElementsByName("parent")[0].value
-    let plane = document.getElementsByName("plane")[0].value
-    let retire = document.getElementsByName("retire")[0].value
-    let company = document.getElementsByName("company")[0].value
+    let salary = parseInt(document.getElementsByName("salary")[0].value)
+    let age = parseInt(document.getElementsByName("age")[0].value)
+    let retireAge = parseInt(document.getElementsByName("retire-age")[0].value)
+    let fortune = parseInt(document.getElementsByName("fortune")[0].value)
+    let dieAge = parseInt(document.getElementsByName("die-age")[0].value)
+    let house = parseInt(document.getElementsByName("house")[0].value)
+    let car = parseInt(document.getElementsByName("car")[0].value)
+    let wedding = parseInt(document.getElementsByName("wedding")[0].value)
+    let kid = parseInt(document.getElementsByName("kid")[0].value)
+    let parent = parseInt(document.getElementsByName("parent")[0].value)
+    let plane = parseInt(document.getElementsByName("plane")[0].value)
+    let retire = parseInt(document.getElementsByName("retire")[0].value)
+    let company = parseInt(document.getElementsByName("company")[0].value)
     
+    document.getElementsByClassName('list')[0].style.display="none"
     document.getElementsByClassName('salary-part')[0].style.display="none"
     document.getElementById("button-part").style.display="none"
     document.getElementsByClassName("planet-part")[0].style.display="none"
@@ -192,18 +192,18 @@ function pressurePage(){
     jackyPart.style.left="710px"
     jackyPart.style.height = "500px"
     jackyPart.style.width = "250px"
-    jackyPart.style.top = "-330px"
+    jackyPart.style.top = "-230px"
     document.getElementsByClassName("jacky-button")[2].remove()
     document.getElementsByClassName("jacky-button")[1].remove()
     document.getElementsByClassName("jacky-button")[0].remove()
 
-    var labels= ['過了的人生','有收入的人生','沒收入的人生'];
+    var pieLabels= ['過了的人生','有收入的人生','沒收入的人生'];
     document.getElementsByClassName('pie-part')[0].style.display = "block"
     let piePart = document.getElementById('pie').getContext('2d')
     let pieChart = new Chart(piePart,{
         type: 'pie',
             data : {
-                labels:labels,
+                labels:pieLabels,
                 datasets: [{
                     data:[age,retireAge - age,dieAge - retireAge],
                     backgroundColor: [
@@ -224,10 +224,47 @@ function pressurePage(){
             }
     })
 
-    let listPart = document.getElementsByClassName("list")[0]
-    listPart.style.width = "270px"
-    listPart.style.top = "250px"
-    listPart.style.height = "350px"
+    var barLabels= ['夢想總值','現有資產','額外支出','風險處理完的額外支出'];
+    document.getElementsByClassName('bar-part')[0].style.display = "block"
+    let barPart = document.getElementById('bar').getContext('2d')
+    let barChart = new Chart(barPart,{
+        type: 'bar',
+            data : {
+                labels:barLabels,
+                datasets: [{
+                    label: "金錢表",
+                    data:[house+car+wedding+kid+parent+plane+retire+company,fortune,fortune,fortune],
+                    backgroundColor: [
+                        "rgb(119,136,153,0.5)",
+                        "rgb(255,255,255,0.5)",
+                        "rgb(127,255,212,0.5)",
+                        "rgb(0,255,212,0.5)"
+                    ],
+                    borderColor: "transparent",
+                }],
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: 'white'
+                    }
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            fontColor:"rgb(255,215,0)",
+                            fontSize: 12
+                        }
+                    }],
+                    xAxes:[{
+                        ticks:{
+                            fontColor:"rgb(255,215,0)",
+                            fontSize: 12
+                        }
+                    }]
+                }
+            }
+    })
 
     for(listTitle = document.getElementsByClassName("list-title").length-1;listTitle>=0;listTitle--){
         document.getElementsByClassName("list-title")[listTitle].remove()
@@ -252,7 +289,6 @@ function pressurePage(){
                 className:"age-ball",
                 left:"0px",
                 top:"0px",
-                id:lifeExpectancy,
                 innerHTML:parseInt(lifeExpectancy) + parseInt(age)
             }},agePart)
 
@@ -270,8 +306,57 @@ function pressurePage(){
                 console.log(ballOrder)
             }
             
-        },700*(nthBall))
+        },300*(nthBall))
         nthBall++
     }
+    let robot = createElement("DIV",{atrs:{
+        className:"robot"
+    }},document.getElementsByTagName("main")[0])
+
+    createElement("DIV",{atrs:{
+        className:"doctor-says",
+        innerHTML:"左上角的機器人會為您的星球進行壓力測試，他有著與您相同的收入，及相同的夢想總值。我們將藉由他來給予您關於您夢想星球的建議。"
+    }},jackyPart)
+
+    let nextbutton = createElement("BUTTON",{atrs:{
+        className:"next-stage",
+        innerHTML:"開始測驗"
+    }},jackyPart)
+
+    
+    nextbutton.addEventListener('click',function(){
+        if(robotPosition == document.getElementsByClassName("age-ball").length){
+
+        }else{
+            updateChart("bar")
+            updateChart("pie")
+            this.innerHTML = "下一階段"
+            let ballCount = document.getElementsByClassName("age-ball").length - 1
+            let nextRobotPosition = getPosition(document.getElementsByClassName("age-ball")[ballCount - robotPosition])
+            robot.style.left = parseInt(nextRobotPosition.x) - 10 +"px"
+            robot.style.top = parseInt(nextRobotPosition.y) - 20 +"px"
+            robotPosition++;
+
+            let startTime = new Date().getTime();
+            let interval = setInterval(function(){
+                if(new Date().getTime() - startTime > 1000){
+                    clearInterval(interval);
+                    return;
+                }
+                robot.style.backgroundImage = "url(../img/robot2.png)"
+                setTimeout(function(){
+                    robot.style.backgroundImage = "url(../img/robot1.png)"
+                },50)
+            }, 100);
+        }
+    })
 }
 
+function updateChart(type){
+    switch(type){
+        case "pie":
+            break;
+        case "bar":
+            break;
+    }
+}
