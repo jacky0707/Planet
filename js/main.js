@@ -31,9 +31,22 @@ function initDreams(){
             switch(event.target.id){
                 case "house":
                     if(document.getElementsByClassName('house-planet').length==5){
-                        drDreamTalk("full")
+                        drDreamTalk("房子")
                         event.target.disabled = true
                     }else{
+                        if(document.getElementsByClassName('house-planet').length==0){
+                            if(document.getElementsByClassName('doctor-say')[0]){
+                                document.getElementsByClassName('doctor-say')[0].remove()
+                            }
+                            let State = createElement("DIV",{atrs:{
+                                style:"height:100px",
+                                className:"doctor-say",
+                                innerHTML:"北市一間 20 坪房平均約 1000 萬"
+                            }},document.getElementsByClassName("doctor-jacky-part")[0])
+                            setTimeout(function(){
+                                State.remove()
+                            },4000)  
+                        }
                         flyInToPlanet(event)
                         let chosenPlace = housePlace.pop()
                         dreamShowUp("house").style.transform = "rotate("+chosenPlace+"deg)"
@@ -44,9 +57,22 @@ function initDreams(){
                     break;
                 case "car":
                     if(document.getElementsByClassName('car-planet').length==8){
-                        drDreamTalk("full")
+                        drDreamTalk("車子")
                         event.target.disabled = true
                     }else{
+                        if(document.getElementsByClassName('car-planet').length==0){
+                            if(document.getElementsByClassName('doctor-say')[0]){
+                                document.getElementsByClassName('doctor-say')[0].remove()
+                            }
+                            let State = createElement("DIV",{atrs:{
+                                style:"height:100px",
+                                className:"doctor-say",
+                                innerHTML:"基本的車款約 50 萬元"
+                            }},document.getElementsByClassName("doctor-jacky-part")[0])
+                            setTimeout(function(){
+                                State.remove()
+                            },4000)  
+                        }
                         flyInToPlanet(event)
                         dreamShowUp("car")
                         addtoList("car")
@@ -56,9 +82,22 @@ function initDreams(){
                     break;
                 case "wedding":
                     if(document.getElementsByClassName('wedding-planet').length==1){
-                        drDreamTalk("full")
+                        drDreamTalk("婚禮")
                         event.target.disabled = true
                     }else{
+                        if(document.getElementsByClassName('wedding-planet').length==0){
+                            if(document.getElementsByClassName('doctor-say')[0]){
+                                document.getElementsByClassName('doctor-say')[0].remove()
+                            }
+                            let State = createElement("DIV",{atrs:{
+                                style:"height:100px",
+                                className:"doctor-say",
+                                innerHTML:"一生一次一場難忘的婚禮大約花費 50 萬元"
+                            }},document.getElementsByClassName("doctor-jacky-part")[0])
+                            setTimeout(function(){
+                                State.remove()
+                            },4000)  
+                        }
                         flyInToPlanet(event)
                         let chosenPlace = weddingPlace.pop()
                         dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
@@ -69,9 +108,22 @@ function initDreams(){
                     break;
                 case "kid":
                     if(document.getElementsByClassName('kid-planet').length==10){
-                        drDreamTalk("full")
+                        drDreamTalk("孩子")
                         event.target.disabled = true
                     }else{
+                        if(document.getElementsByClassName('kid-planet').length==0){
+                            if(document.getElementsByClassName('doctor-say')[0]){
+                                document.getElementsByClassName('doctor-say')[0].remove()
+                            }
+                            let State = createElement("DIV",{atrs:{
+                                style:"height:100px",
+                                className:"doctor-say",
+                                innerHTML:"一個小孩從出生到大學畢業平均花費 400 萬元"
+                            }},document.getElementsByClassName("doctor-jacky-part")[0])
+                            setTimeout(function(){
+                                State.remove()
+                            },4000)  
+                        }
                         flyInToPlanet(event)
                         let chosenPlace = kidPlace.pop()
                         dreamShowUp("kid").style.transform = "rotate("+chosenPlace+"deg)"
@@ -82,10 +134,22 @@ function initDreams(){
                     break;
                 case "parent":
                     if(document.getElementsByClassName('parent-planet').length==1){
-                        drDreamTalk("full")
+                        drDreamTalk("父母")
                         event.target.disabled = true
                     }else{
-                        console.log("parent")
+                        if(document.getElementsByClassName('parent-planet').length==0){
+                            if(document.getElementsByClassName('doctor-say')[0]){
+                                document.getElementsByClassName('doctor-say')[0].remove()
+                            }
+                            let State = createElement("DIV",{atrs:{
+                                style:"height:100px",
+                                className:"doctor-say",
+                                innerHTML:"預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 24 萬元"
+                            }},document.getElementsByClassName("doctor-jacky-part")[0])
+                            setTimeout(function(){
+                                State.remove()
+                            },4000)  
+                        }
                         flyInToPlanet(event)
                         let chosenPlace = parentPlace.pop()
                         dreamShowUp("parent").style.transform = "rotate("+chosenPlace+"deg)"
@@ -96,21 +160,47 @@ function initDreams(){
                     break;
                 case "plane":
                     if(document.getElementsByClassName('plane-planet').length==1){
-                        drDreamTalk("full")
+                        drDreamTalk("旅遊")
                         event.target.disabled = true
                     }else{
+                        if(document.getElementsByClassName('plane-planet').length==0){
+                            if(document.getElementsByClassName('doctor-say')[0]){
+                                document.getElementsByClassName('doctor-say')[0].remove()
+                            }
+                            let State = createElement("DIV",{atrs:{
+                                style:"height:100px",
+                                className:"doctor-say",
+                                innerHTML:"預設的旅遊費：一個出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元"
+                            }},document.getElementsByClassName("doctor-jacky-part")[0])
+                            setTimeout(function(){
+                                State.remove()
+                            },4000)  
+                        }
                         flyInToPlanet(event)
                         dreamShowUp("plane")
                         addtoList("plane")
                         let plane = document.getElementsByName("plane")[0].value
-                        document.getElementsByName("plane")[0].value = (parseInt(plane) + 600000)
+                        document.getElementsByName("plane")[0].value = (parseInt(plane) + 450000)
                     }
                     break;
                 case "retire":
                     if(document.getElementsByClassName('retire-planet').length==1){
-                        drDreamTalk("full")
+                        drDreamTalk("退休")
                         event.target.disabled = true
                     }else{
+                        if(document.getElementsByClassName('retire-planet').length==0){
+                            if(document.getElementsByClassName('doctor-say')[0]){
+                                document.getElementsByClassName('doctor-say')[0].remove()
+                            }
+                            let State = createElement("DIV",{atrs:{
+                                style:"height:100px",
+                                className:"doctor-say",
+                                innerHTML:"預設理想的退休費：退休後每月生活費 15000 * 12 個月 * 20 年 = 360 萬元"
+                            }},document.getElementsByClassName("doctor-jacky-part")[0])
+                            setTimeout(function(){
+                                State.remove()
+                            },4000)  
+                        }
                         flyInToPlanet(event)
                         let chosenPlace = retirePlace.pop()
                         dreamShowUp("retire").style.transform = "rotate("+chosenPlace+"deg)"
@@ -121,9 +211,22 @@ function initDreams(){
                     break;
                 case "company":
                     if(document.getElementsByClassName('company-planet').length==3){
-                        drDreamTalk("full")
+                        drDreamTalk("創業")
                         event.target.disabled = true
                     }else{
+                        if(document.getElementsByClassName('company-planet').length==0){
+                            if(document.getElementsByClassName('doctor-say')[0]){
+                                document.getElementsByClassName('doctor-say')[0].remove()
+                            }
+                            let State = createElement("DIV",{atrs:{
+                                style:"height:100px",
+                                className:"doctor-say",
+                                innerHTML:"預設創業準備金： 100 萬元"
+                            }},document.getElementsByClassName("doctor-jacky-part")[0])
+                            setTimeout(function(){
+                                State.remove()
+                            },4000)  
+                        }
                         flyInToPlanet(event)
                         let chosenPlace = companyPlace.pop()
                         dreamShowUp("company").style.transform = "rotate("+chosenPlace+"deg)"
@@ -142,7 +245,7 @@ function dreamShowUp(dream){
     let newDream = createElement("DIV",{atrs:{
         id:dream+amount,
         className:"planet-things "+dream+"-planet"
-    }},document.getElementsByTagName("main")[0])
+    }},document.getElementsByClassName("planet")[0])
     setTimeout(function(){
         newDream.style.display="block"
     },2100)
@@ -313,7 +416,7 @@ function pressurePage(){
         className:"robot"
     }},document.getElementsByTagName("main")[0])
 
-    createElement("DIV",{atrs:{
+    let changeIntroduction = createElement("DIV",{atrs:{
         className:"doctor-says",
         innerHTML:"左上角的機器人會為您的星球進行壓力測試，他有著與您相同的收入，及相同的夢想總值。我們將藉由他來給予您關於您夢想星球的建議。"
     }},jackyPart)
@@ -336,22 +439,20 @@ function pressurePage(){
             robot.style.left = parseInt(nextRobotPosition.x) - 10 +"px"
             robot.style.top = parseInt(nextRobotPosition.y) - 20 +"px"
             robotPosition++;
-
-            let startTime = new Date().getTime();
-            let interval = setInterval(function(){
-                if(new Date().getTime() - startTime > 1000){
-                    clearInterval(interval);
-                    return;
-                }
-                robot.style.backgroundImage = "url(../img/robot2.png)"
-                setTimeout(function(){
-                    robot.style.backgroundImage = "url(../img/robot1.png)"
-                },50)
-            }, 100);
         }
     })
 }
 
+function drDreamTalk(type){
+    let fullState = createElement("DIV",{atrs:{
+        style:"height:100px",
+        className:"doctor-say",
+        innerHTML:type+"數量已達夢想星球的上限了喔"
+    }},document.getElementsByClassName("doctor-jacky-part")[0])
+    setTimeout(function(){
+        fullState.remove()
+    },3000)
+}
 function updateChart(type){
     switch(type){
         case "pie":

@@ -53,6 +53,12 @@ button{
     background-repeat: no-repeat;
     background-position: center;
     transition: all 1s;
+    animation: planetSpin linear infinite 60s;
+}
+@keyframes planetSpin{
+    to{
+        transform:rotate( 360deg)
+    }
 }
 #house{
     left:0px;
@@ -196,8 +202,8 @@ button{
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 70px 50px;
-    left: calc(50vw - 255px);
-    top:50px;
+    left: -30px;
+    top:-30px;
     z-index: 200;
 }
 .company-planet{
@@ -207,8 +213,8 @@ button{
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 70px 50px;
-    left: calc(50vw - 255px);
-    top:50px;
+    left: -30px;
+    top:-30px;
     z-index: 200;
 }
 .car-planet{
@@ -218,8 +224,8 @@ button{
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 45px 20px;
-    left: calc(50vw - 240px);
-    top:65px;
+    left: -15px;
+    top:-15px;
     z-index: 150;
     animation: carDriving 15s linear infinite;
 }
@@ -230,8 +236,8 @@ button{
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 80px 80px;
-    left: calc(50vw - 145px);
-    top:160px;
+    left: 80px;
+    top:80px;
     z-index: 200;
 }
 .kid-planet{
@@ -241,8 +247,8 @@ button{
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 40px 40px;
-    left: calc(50vw - 200px);
-    top:105px;
+    left: 25px;
+    top:25px;
     z-index: 200;
 }
 .parent-planet{
@@ -252,8 +258,8 @@ button{
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 50px 80px;
-    left: calc(50vw - 145px);
-    top:160px;
+    left: 80px;
+    top:80px;
     z-index: 100;
 }
 .plane-planet{
@@ -264,8 +270,8 @@ button{
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 60px 30px;
-    left: calc(50vw - 300px);
-    top:0px;
+    left: -75px;
+    top:-75px;
     z-index: 100;
     animation: planeDrive 10s linear infinite;
 }
@@ -276,8 +282,8 @@ button{
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 80px 80px;
-    left: calc(50vw - 145px);
-    top:160px;
+    left: 80px;
+    top:80px;
     z-index: 100;
 }
 .dream-ball{
@@ -392,10 +398,11 @@ button{
     padding:15px 20px;
     border-radius: 50px;
     font-size: 20px;
-    line-height: 28px;
+    line-height: 20px;
     box-shadow: 0px 0px 5px 5px plum;
     display:flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     transition: all 1s; 
 }
@@ -522,7 +529,7 @@ button{
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    transition:all 1s linear;
+    transition:all 0.7s linear;
 }
 .next-stage{
     position: absolute;
