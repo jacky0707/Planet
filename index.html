@@ -5,7 +5,6 @@
     <title>Planet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="./css/animation.css">
     <script src="./js/lib.js"></script>
     <script src="./js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
@@ -16,13 +15,28 @@
         let kidPlace = [36,72,108,144,180,216,252,288,324,360]
         let parentPlace = [262]
         let retirePlace = [142]
-
         let robotPosition = 0
+        function onloadThings(){
+            initDreams()
+            teachingUsage()
+        }
+        function teachingUsage(){
+            //檢查 session 
+            let pageHeight = document.documentElement.clientHeight
+            console.log(pageHeight)
+            /*let teachMask = createElement("DIV",{atrs:{
+                id:"mask",
+                style:"height:"+pageHeight+"px;width:100%;background-color:black;text-align:center;padding-top:100px;z-index:500",
+                innerHTML:"這一頁是首頁喔"
+            }},document.getElementsByTagName("body")[0])*/
+
+        }
     </script>
 </head>
 
-<body onload="initDreams()">
+<body onload="onloadThings()">
     <main>
+        
         <div class="top-part">
                 <div class="button-part" id="button-part">
                     <button class="dream-button house" id="house"></button>

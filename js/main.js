@@ -195,7 +195,7 @@ function initDreams(){
                             let State = createElement("DIV",{atrs:{
                                 style:"height:100px",
                                 className:"doctor-say",
-                                innerHTML:"預設理想的退休費：退休後每月生活費 15000 * 12 個月 * 20 年 = 360 萬元"
+                                innerHTML:"預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元"
                             }},document.getElementsByClassName("doctor-jacky-part")[0])
                             setTimeout(function(){
                                 State.remove()
@@ -206,7 +206,7 @@ function initDreams(){
                         dreamShowUp("retire").style.transform = "rotate("+chosenPlace+"deg)"
                         addtoList("retire")
                         let retire = document.getElementsByName("retire")[0].value
-                        document.getElementsByName("retire")[0].value = (parseInt(retire) + 3600000)
+                        document.getElementsByName("retire")[0].value = (parseInt(retire) + 4800000)
                     }
                     break;
                 case "company":
